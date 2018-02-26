@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Balance</title>
+    <!--[if IE]>
+                <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+
+    <style>
+        #myCanvas {
+            background: linear-gradient(to left, rgba(188, 158, 180, 0), rgba(208, 168, 198, 3));
+        }
+
+    </style>
+
+</head>
+
+
+
+<body onload="draw()">
+
+    <canvas id="myCanvas" width="400" height="450" style="border:1px solid #c3c3c3;">
+        Canvas not supported, sorry!
+    </canvas>
+
+
+
+
+
+    <script>
+        function draw() {}
+        var c = document.getElementById("myCanvas");
+        var ctx = c.getContext("2d");
+
+
+
+        //head
+        head(ctx, 200, 110);
+
+        function head(ctx, x, y) {
+            ctx.beginPath();
+            ctx.arc(x, y, 60, 0, 2 * Math.PI);
+
+            ctx.fillStyle = "#B16C80";
+            ctx.fill();
+            ctx.closePath()
+        }
+
+        //body
+        body(ctx, 200, 180);
+
+        function body(ctx, x, y) {
+            ctx.beginPath();
+            ctx.arc(x, y, 90, 0, 2 * Math.PI);
+
+
+
+
+            ctx.fillStyle = "#B16C80";
+            ctx.fill();
+            ctx.closePath()
+        }
+
+        //chest
+        chest(ctx, 200, 180);
+
+        function chest(ctx, x, y) {
+            ctx.beginPath();
+            ctx.arc(x, y, 60, 3, 3 * Math.PI);
+            ctx.fillStyle = "#B3798A";
+            ctx.fill();
+            ctx.closePath();
+        }
+
+        //leftEar
+        leftEar(ctx, 160, 100)
+
+        function leftEar(ctx, x, y) {
+            ctx.beginPath();
+            ctx.moveTo(190, 50);
+            ctx.lineTo(150, 75);
+            ctx.lineTo(150, 30);
+            ctx.fillStyle = "#909090";
+            ctx.fill();
+            ctx.closePath()
+        }
+
+        //rightEar
+
+        rightEar(ctx, 160, 100)
+
+        function rightEar(ctx, x, y) {
+            ctx.beginPath();
+            ctx.moveTo(250, 75);
+            ctx.lineTo(200, 50);
+            ctx.lineTo(235, 30);
+            ctx.fillStyle = "#909090";
+            ctx.fill();
+            ctx.closePath()
+
+        }
+
+        //leftEye
+        leftEye(ctx, 177, 85);
+
+        function leftEye(ctx, x, y) {
+            ctx.beginPath();
+            ctx.arc(x, y, 3, 0, 2 * Math.PI);
+            ctx.fillStyle = "#000";
+            ctx.fill();
+            ctx.closePath()
+        }
+
+        //rightEye
+        rightEye(ctx, 217, 85);
+
+        function rightEye(ctx, x, y) {
+            ctx.beginPath();
+            ctx.arc(x, y, 3, 0, 2 * Math.PI);
+            ctx.fillStyle = "#000";
+            ctx.fill();
+            ctx.closePath();
+        }
+
+        //leftNose
+        leftNose(ctx, 190, 90);
+
+        function leftNose(ctx, x, y) {
+            ctx.beginPath();
+
+            ctx.moveTo(x, y);
+            ctx.lineTo(200, 100);
+
+            ctx.stroke();
+            ctx.closePath();
+        }
+
+        //rightNose
+        rightNose(ctx, 200, 90)
+
+        function rightNose(ctx, x, y) {
+            ctx.beginPath();
+            ctx.moveTo(x, y);
+            ctx.lineTo(190, 90);
+            ctx.stroke();
+            ctx.closePath();
+
+        }
+
+        //mouth
+        mouth(ctx, 210, 105)
+
+        function mouth(ctx, x, y) {
+            ctx.beginPath();
+            ctx.moveTo(x, y);
+            ctx.lineTo(200, 110);
+            ctx.stroke();
+            ctx.closePath();
+
+        }
+
+        //eyebrowLeft
+        eyebrowLeft(ctx, 205, 75)
+
+        function eyebrowLeft(ctx, x, y) {
+            ctx.beginPath();
+            ctx.moveTo(x, y);
+            ctx.lineTo(225, 79);
+            ctx.stroke();
+            ctx.closePath();
+        }
+
+        //eyebrowRight
+        eyebrowRight(ctx, 185, 75)
+
+        function eyebrowRight(ctx, x, y) {
+            ctx.beginPath();
+            ctx.moveTo(x, y);
+            ctx.lineTo(165, 77);
+            ctx.stroke();
+            ctx.closePath();
+        }
+
+
+        //armOne
+
+        armOne(ctx, 135, 130);
+
+        function armOne(cctx, x, y) {
+            ctx.beginPath();
+            ctx.moveTo(x, y);
+            ctx.lineTo(90, 170);
+            ctx.stroke();
+            ctx.closePath()
+        }
+
+        //armTwo
+        armTwo(ctx, 90, 170);
+
+        function armTwo(cctx, x, y) {
+            ctx.beginPath();
+            ctx.moveTo(x, y);
+            ctx.lineTo(70, 180);
+            ctx.stroke();
+            ctx.closePath()
+        }
+
+        //armThree
+        armThree(ctx, 310, 160);
+
+        function armThree(cctx, x, y) {
+            ctx.beginPath();
+            ctx.moveTo(x, y);
+            ctx.lineTo(260, 120);
+            ctx.stroke();
+            ctx.closePath();
+        }
+
+        //armFour
+        armFour(ctx, 332, 167);
+
+        function armFour(cctx, x, y) {
+            ctx.beginPath();
+            ctx.moveTo(x, y);
+            ctx.lineTo(310, 160);
+            ctx.stroke();
+            ctx.closePath();
+        }
+
+        //cone
+        rightEar(ctx, 160, 100)
+
+        function rightEar(ctx, x, y) {
+            ctx.beginPath();
+            ctx.moveTo(250, 75);
+            ctx.lineTo(200, 50);
+            ctx.lineTo(235, 30);
+            ctx.fillStyle = "#909090";
+            ctx.fill();
+            ctx.closePath()
+
+        }
+
+        //cone
+        cone(ctx, 290, 270)
+
+        function cone(ctx, x, y) {
+            ctx.beginPath();
+            ctx.moveTo(x, y);
+            ctx.lineTo(195, 450);
+            ctx.lineTo(100, 270);
+            ctx.lineTo(195, 270);
+            ctx.fillStyle = "#909090";
+
+            ctx.fill();
+            ctx.closePath();
+
+        }
+
+        //leftLeg
+        leftLeg(ctx, 310, 330);
+
+        function leftLeg(cctx, x, y) {
+            ctx.beginPath();
+            ctx.moveTo(x, y);
+            ctx.lineTo(230, 250);
+            ctx.stroke();
+            ctx.closePath();
+        }
+
+        //rightLeg
+        rightLeg(ctx, 170, 380);
+
+        function rightLeg(ctx, x, y) {
+            ctx.beginPath();
+            ctx.moveTo(x, y);
+            ctx.lineTo(160, 250);
+            ctx.stroke();
+            ctx.closePath();
+        }
+
+    </script>
+
+
+
+
+
+
+
+    <!-- head ctx.beginPath(); ctx.stroke(); ctx.arc(200, 110, 60, 0, 2 * Math.PI); ctx.fill(); ctx.fillStyle = "#e8e4f2"; ctx.closePath() -->
+
+    <!-- X = to go left - minus
+     // X = to go right - add 
+     // Y - to go up - minus 
+     // Y - to go down - add-- - >
+
+  //x,y,r,sAngle,eAngle,counterclockwise // The x-coordinate of the center of the circle, // The y-coordinate of the center of the circle. //The radius of the circle // The starting angle, in radians (0 is at the 3 o'clock position of the arc's circle) //The ending angle, in radians 
+
+</html>
