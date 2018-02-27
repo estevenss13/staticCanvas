@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Balance</title>
+    <!--[if IE]>
+                <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+
+    <style>
+        #myCanvas {
+            background: linear-gradient(to left, rgba(188, 158, 180, 0), rgba(208, 168, 198, 3));
+        }
+
+    </style>
+
+</head>
+
+
+
+<body onload="draw()">
+
+    <canvas id="myCanvas" width="400" height="450" style="border:1px solid #c3c3c3;">
+        Canvas not supported, sorry!
+    </canvas>
+
+
+
+
+    <script>
+        function draw() {}
+        var c = document.getElementById("myCanvas");
+        var ctx = c.getContext("2d");
+
+        //cone
+        cone(ctx, 290, 270)
+
+        function cone(ctx, x, y) {
+            ctx.beginPath();
+            ctx.moveTo(x, y);
+            ctx.lineTo(195, 450);
+            ctx.lineTo(100, 270);
+            ctx.lineTo(195, 270);
+
+            ctx.fillStyle = "#909090";
+            ctx.fill();
+            ctx.closePath();
+
+
+
+
+
+        }
+
+        //head
+        head(ctx, 200, 110);
+
+        function head(ctx, x, y) {
+            ctx.beginPath();
+            ctx.arc(x, y, 60, 0, 2 * Math.PI);
+            ctx.fillStyle = "#B16C80";
+            ctx.fill();
+            ctx.closePath();
+
+            //leftEye
+            ctx.beginPath();
+            ctx.arc(177, 85, 3, 0, 2 * Math.PI);
+            ctx.fillStyle = "#000";
+            ctx.fill();
+            ctx.closePath()
+
+            //leftEyebrow
+            ctx.beginPath();
+            ctx.moveTo(210, 74);
+            ctx.lineTo(230, 79);
+            ctx.stroke();
+            ctx.closePath();
+
+            //rightEyebrow
+            ctx.beginPath();
+            ctx.moveTo(185, 75);
+            ctx.lineTo(165, 77);
+            ctx.stroke();
+            ctx.closePath();
+
+            //nose
+            ctx.beginPath();
+            ctx.moveTo(190, 87);
+            ctx.lineTo(220, 100);
+            ctx.stroke();
+            ctx.closePath();
+
+            //noseSecond
+            ctx.beginPath();
+            ctx.moveTo(200, 80);
+            ctx.lineTo(190, 110);
+            ctx.stroke();
+            ctx.closePath();
+
+
+            // <!-- X = to go left - minus
+            // X = to go right - add 
+            // Y - to go up - minus 
+            // Y - to go down - add-- - >
+
+            //rightEye
+            ctx.beginPath();
+            ctx.arc(217, 85, 3, 0, 2 * Math.PI);
+            ctx.fillStyle = "#000";
+            ctx.fill();
+            ctx.closePath()
+
+
+            //leftEar
+            ctx.beginPath();
+            ctx.moveTo(190, 50);
+            ctx.lineTo(150, 75);
+            ctx.lineTo(150, 30);
+            ctx.fillStyle = "#909090";
+            ctx.fill();
+            ctx.closePath()
+
+            //rightEar
+            ctx.beginPath();
+            ctx.moveTo(250, 75);
+            ctx.lineTo(200, 50);
+            ctx.lineTo(235, 30);
+            ctx.fillStyle = "#909090";
+            ctx.fill();
+            ctx.closePath();
+
+
+
+
+
+
+
+
+
+            //body
+
+            //body
+            body(ctx, 200, 180);
+
+
+
+            function body(ctx, x, y) {
+                ctx.beginPath();
+                ctx.arc(x, y, 90, 0, 2 * Math.PI);
+                ctx.fillStyle = "#B16C80";
+                ctx.fill();
+                ctx.closePath()
+
+                //mouth
+                ctx.beginPath();
+                ctx.moveTo(185, 105);
+                ctx.lineTo(210, 100);
+                ctx.stroke();
+                ctx.closePath();
+
+                //rightLeg
+                ctx.beginPath();
+                ctx.moveTo(170, 380);
+                ctx.lineTo(160, 250);
+                ctx.stroke();
+
+                //leftLeg
+                ctx.beginPath();
+                ctx.moveTo(320, 340);
+                ctx.lineTo(230, 250);
+                ctx.stroke();
+
+                //rightArmone
+                ctx.beginPath();
+                ctx.moveTo(135, 130);
+                ctx.lineTo(90, 170);
+                ctx.stroke();
+                ctx.closePath()
+
+                //rightArmtwo
+                ctx.beginPath();
+                ctx.moveTo(90, 170);
+                ctx.lineTo(70, 180);
+                ctx.stroke();
+                ctx.closePath()
+
+                //leftArmone
+                ctx.beginPath();
+                ctx.moveTo(315, 160);
+                ctx.lineTo(260, 125);
+                ctx.stroke();
+                ctx.closePath();
+
+                //leftArmtwo
+                ctx.beginPath();
+                ctx.moveTo(336, 161);
+                ctx.lineTo(313, 159);
+                ctx.stroke();
+                ctx.closePath();
+
+
+                //chest
+                ctx.beginPath();
+                ctx.arc(x, y, 60, 3, 3 * Math.PI);
+                ctx.fillStyle = "#B3798A";
+                ctx.fill();
+                ctx.closePath();
+            }
+
+        }
+
+        //cocktailTop
+        ctx.beginPath();
+        ctx.moveTo(53, 144);
+        ctx.lineTo(80, 142);
+        ctx.lineTo(68, 160);
+        ctx.fillStyle = "#2d0157";
+        ctx.fill();
+        ctx.closePath();
+
+        //cocktailBottom
+        ctx.beginPath();
+        ctx.moveTo(68, 158);
+        ctx.lineTo(70, 180);
+        ctx.lineWidth = 3;
+        ctx.lineCap = "round";
+        ctx.strokeStyle = "#6139ff";
+        ctx.stroke();
+        ctx.closePath();
+
+    </script>
+
+
+
+
+
+
+
+    <!-- head ctx.beginPath(); ctx.stroke(); ctx.arc(200, 110, 60, 0, 2 * Math.PI); ctx.fill(); ctx.fillStyle = "#e8e4f2"; ctx.closePath() -->
+
+    <!-- X = to go left - minus
+     // X = to go right - add 
+     // Y - to go up - minus 
+     // Y - to go down - add-- - >
+
+  //x,y,r,sAngle,eAngle,counterclockwise // The x-coordinate of the center of the circle, // The y-coordinate of the center of the circle. //The radius of the circle // The starting angle, in radians (0 is at the 3 o'clock position of the arc's circle) //The ending angle, in radians 
+
+</html>
