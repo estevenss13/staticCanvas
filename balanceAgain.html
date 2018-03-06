@@ -7,8 +7,8 @@
     <!--[if IE]>
 
 <!-- Finished copy-->
-                <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-        <![endif]-->
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
 
     <style>
         #myCanvas {
@@ -35,6 +35,12 @@
         var c = document.getElementById("myCanvas");
         var ctx = c.getContext("2d");
 
+      
+ctx.shadowBlur = 60;
+ctx.shadowOffsetX = 0;
+ctx.shadowOffsetY = 400;
+ctx.shadowColor = "#101010";
+        
         //cone
         cone(ctx, 290, 270)
 
