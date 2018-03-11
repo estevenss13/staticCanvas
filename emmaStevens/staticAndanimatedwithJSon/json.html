@@ -1,0 +1,89 @@
+<!--Defines document type version-->
+<!DOCTYPE html>
+
+<!--Defines root of the HTML document-->
+<html>
+
+<!--Gives a general oversight into the document-->
+
+<head>
+    <!--Character encoding to use-->
+    <meta charset="utf-8" />
+    <!--Names the title on the tab-->
+    <title>
+        Assignment 1
+    </title>
+
+    <!--Links CSS to the HTML page-->
+    <link rel="stylesheet" href="css.css">
+
+
+
+    <style>
+        canvas {
+            border: 3px solid black;
+        }
+        
+        h3 {
+            font-size: 50px;
+        }
+
+    </style>
+</head>
+
+<body onload="draw()">
+
+    <h1>Assignment One - Emma Stevens</h1>
+    <h2> JSon Object </h2>
+    <canvas id="json" style="border:2px solid black;" width="1100" height="600"></canvas>
+
+
+
+
+
+
+
+    <script>
+        /*declare data as a variable */
+        //Square brackets hold arrays whilst curly braces hold objects
+        var data = [{
+                "name": "How hard do you find it to read this text? Difficult? Make sure you make time to see an optometrist regularly, detailed below are the three optometrist sites that come up at the top of Google: Specsavers, Vision Express and Broadhurst ",
+                //names and their corresponding values
+                "x": 225,
+                "y": 197,
+                "width": 501,
+                "height": 100,
+                "bgColor": "#00FF00",
+                "radius": 10,
+                "version": "1.0.0"
+
+
+
+            }
+
+        ];
+
+
+        var c = document.getElementById("json");
+        var ctx = c.getContext("2d");
+        ctx.fillText(data[0].name, 25, 35);
+
+
+
+
+
+
+        ctx.stroke();
+
+    </script>
+
+
+
+
+
+
+
+
+</body>
+
+</html>

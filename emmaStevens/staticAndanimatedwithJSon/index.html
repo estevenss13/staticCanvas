@@ -1,0 +1,473 @@
+<!--Defines document type version-->
+<!DOCTYPE html>
+
+<!--Defines root of the HTML document-->
+<html>
+
+<!--Gives a general oversight into the document-->
+
+<head>
+    <!--Character encoding to use-->
+    <meta charset="utf-8" />
+    <!--Names the title on the tab-->
+    <title>
+        Assignment 1
+    </title>
+
+    <!--Links CSS to the HTML page-->
+    <link rel="stylesheet" href="css.css">
+
+</head>
+
+<body onload="draw()">
+
+    <h1>Assignment One - Emma Stevens</h1>
+
+    <!--Div helps divide the web page and has also made it easier for me to edit the layout in CSS -->
+    <div class="staticExample">
+
+        <h2>My Static Example</h2>
+
+        <!--This sets up the container for the canvas only -->
+        <canvas id="static" width="400" height="450" style="border:2px groove #000;">
+            Canvas not supported, sorry!
+        </canvas>
+
+    </div>
+
+    <div id="animatedExample">
+
+
+    </div>
+
+    <div id="pairWork">
+
+
+    </div>
+
+
+    <div id="JSon">
+
+
+    </div>
+
+
+
+
+
+
+    <script>
+        //Co-ordinates
+        // <!-- X = to go left - minus
+        // X = to go right - add 
+        // Y - to go up - minus 
+        // Y - to go down - add-- - >
+
+
+
+        //This will display the code after the page is done loading
+        function draw() {}
+        //This calls into the HTML and calls the correct canvas by the id static.
+        var c = document.getElementById("static");
+        //This insures the object can handle two dimensional contexts.
+        var ctx = c.getContext("2d");
+
+        //Adds shadow to the cone bar stool in order to add realism.
+        ctx.shadowBlur = 60;
+        ctx.shadowOffsetX = 0;
+        ctx.shadowOffsetY = 400;
+        ctx.shadowColor = "#101010";
+
+        //cone bar stool
+
+        cone(ctx, 290, 270)
+
+        //grouped into functions for easier compartmentalization
+        function cone(ctx, x, y) {
+            //starts the drawing path
+            ctx.beginPath();
+            //moves the path to the specified x and y co-ordinates
+            ctx.moveTo(x, y);
+            //the end shape is a triangle therefore three lines are needed, lineTo creates a TO and FROM point
+            ctx.lineTo(195, 450);
+            ctx.lineTo(100, 270);
+            ctx.lineTo(195, 270);
+            //specifies the colour of the triangle
+            ctx.fillStyle = "#909090";
+            //executes this action
+            ctx.fill();
+            //closure of the path
+            ctx.closePath();
+
+        }
+
+        //head
+        head(ctx, 200, 110);
+
+        function head(ctx, x, y) {
+            ctx.beginPath();
+            //x, y, radius, startAngle, endAngle, anticlockwise
+            /*  MDN Web Docs. (2018). CanvasRenderingContext2D.arc(). [online] Available at: https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/arc [Accessed 1 Mar. 2018]. */
+            ctx.arc(x, y, 60, 0, 2 * Math.PI);
+            ctx.fillStyle = "#B16C80";
+            ctx.fill();
+            ctx.closePath();
+
+            //leftEye
+            ctx.beginPath();
+            ctx.arc(177, 85, 3, 0, 2 * Math.PI);
+            ctx.fillStyle = "#000";
+            ctx.fill();
+            ctx.closePath()
+
+            //leftEyebrow
+            ctx.beginPath();
+            ctx.moveTo(210, 74);
+            ctx.lineTo(230, 79);
+            ctx.stroke();
+            ctx.closePath();
+
+            //rightEyebrow
+            ctx.beginPath();
+            ctx.moveTo(185, 75);
+            ctx.lineTo(165, 77);
+            ctx.stroke();
+            ctx.closePath();
+
+            //nose
+            ctx.beginPath();
+            ctx.moveTo(190, 87);
+            ctx.lineTo(220, 100);
+            ctx.stroke();
+            ctx.closePath();
+
+            //noseSecond
+            ctx.beginPath();
+            ctx.moveTo(200, 80);
+            ctx.lineTo(190, 110);
+            ctx.stroke();
+            ctx.closePath();
+
+
+
+
+            //rightEye
+            ctx.beginPath();
+            ctx.arc(217, 85, 3, 0, 2 * Math.PI);
+            ctx.fillStyle = "#000";
+            ctx.fill();
+            ctx.closePath()
+
+
+            //leftEar
+            ctx.beginPath();
+            ctx.moveTo(190, 50);
+            ctx.lineTo(150, 75);
+            ctx.lineTo(150, 30);
+            ctx.fillStyle = "#909090";
+            ctx.fill();
+            ctx.closePath()
+
+            //rightEar
+            ctx.beginPath();
+            ctx.moveTo(250, 75);
+            ctx.lineTo(200, 50);
+            ctx.lineTo(235, 30);
+            ctx.fillStyle = "#909090";
+            ctx.fill();
+            ctx.closePath();
+
+            //body
+            body(ctx, 200, 180);
+
+            function body(ctx, x, y) {
+                ctx.beginPath();
+                ctx.arc(x, y, 90, 0, 2 * Math.PI);
+                ctx.fillStyle = "#B16C80";
+                ctx.fill();
+                ctx.closePath()
+
+                //mouth
+                ctx.beginPath();
+                ctx.moveTo(185, 105);
+                ctx.lineTo(210, 100);
+                ctx.stroke();
+                ctx.closePath();
+
+                //rightLeg
+                ctx.beginPath();
+                ctx.moveTo(170, 380);
+                ctx.lineTo(160, 250);
+                ctx.stroke();
+
+                //leftLeg
+                ctx.beginPath();
+                ctx.moveTo(320, 340);
+                ctx.lineTo(230, 250);
+                ctx.stroke();
+
+                //rightArmone
+                ctx.beginPath();
+                ctx.moveTo(135, 130);
+                ctx.lineTo(90, 170);
+                ctx.stroke();
+                ctx.closePath()
+
+                //rightArmtwo
+                ctx.beginPath();
+                ctx.moveTo(90, 170);
+                ctx.lineTo(70, 180);
+                ctx.stroke();
+                ctx.closePath()
+
+                //leftArmone
+                ctx.beginPath();
+                ctx.moveTo(315, 160);
+                ctx.lineTo(260, 125);
+                ctx.stroke();
+                ctx.closePath();
+
+                //leftArmtwo
+                ctx.beginPath();
+                ctx.moveTo(336, 161);
+                ctx.lineTo(313, 159);
+                ctx.stroke();
+                ctx.closePath();
+
+
+                //chest
+                ctx.beginPath();
+                ctx.arc(x, y, 60, 3, 3 * Math.PI);
+                ctx.fillStyle = "#B3798A";
+                ctx.fill();
+                ctx.closePath();
+            }
+
+        }
+
+        //cocktailTop
+        ctx.beginPath();
+        ctx.moveTo(53, 144);
+        ctx.lineTo(80, 142);
+        ctx.lineTo(68, 160);
+        ctx.fillStyle = "#2d0157";
+        ctx.fill();
+        ctx.closePath();
+
+        //cocktailBottom
+        ctx.beginPath();
+        ctx.moveTo(72, 180);
+        ctx.lineTo(68, 180);
+        ctx.lineWidth = 5;
+        ctx.lineCap = "round";
+        ctx.strokeStyle = "#000";
+        ctx.stroke();
+        ctx.closePath();
+
+        //cocktailEnd
+
+        ctx.beginPath();
+        ctx.moveTo(68, 158);
+        ctx.lineTo(70, 180);
+        ctx.lineWidth = 3;
+        ctx.lineCap = "round";
+        ctx.strokeStyle = "#6139ff";
+        ctx.stroke();
+        ctx.closePath();
+
+    </script>
+    <hr>
+    <!--Animated example begins-->
+    <h2>My Animated Example</h2>
+
+
+    <!--canvas is defined as animated-->
+    <canvas id="animated" width="380" height="380" style="border:1px solid #c3c3c3;">
+        Canvas not supported, sorry!
+    </canvas>
+
+
+    <script>
+        /*  Html5canvastutorials.com. (2018). HTML5 Canvas Animation Tutorial. [online] Available at: https://www.html5canvastutorials.com/advanced/html5-canvas-animation-stage/ [Accessed 6 Mar. 2018].*/
+
+        //sets variables
+        var x = 3;
+        var y = 20;
+        var speed = 5;
+
+        //sets the animation in a function
+        function animate() {
+
+            /*this tells the browser to "perform an animation" before the next repaint.
+           MDN Web Docs. (2018). window.requestAnimationFrame(). [online] Available at: https://developer.mozilla.org/en-US/docs/Web/API/window/requestAnimationFrame [Accessed 6 Mar. 2018].
+           */
+            reqAnimFrame = window.mozRequestAnimationFrame ||
+                window.webkitRequestAnimationFrame ||
+                window.msRequestAnimationFrame ||
+                window.oRequestAnimationFrame;
+            /*executes code on the "next available screen repaint". This means it will only display the animations when the sole user's computer is ready.
+                        Javascriptkit.com. (2018). Understanding JavaScript's requestAnimationFrame() method for smooth animations. [online] Available at: http://www.javascriptkit.com/javatutors/requestanimationframe.shtml [Accessed 6 Mar. 2018].
+                        */
+            reqAnimFrame(animate);
+
+            /* += is an operator which adds an addition to a variable */
+            x += speed;
+
+            /*this is an if loop, meaning ONLY if the conditions that follow are true
+             */
+            if (x <= 5 || x >= 10) {
+                speed = +speed;
+            }
+            /* 
+            Adds worth to a variable
+            
+            */
+
+            draw();
+        }
+
+        /*The OR operator (||) returns true if one or both expressions are true, otherwise it returns false
+       
+        W3schools.com. (2018). Tryit Editor v3.5. [online] Available at: https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_oper_or [Accessed 9 Mar. 2018].
+        
+        */
+
+
+        function draw() {
+            var canvas = document.getElementById("animated");
+            var context = canvas.getContext("2d");
+
+            context.clearRect(410, 50, 10, 90);
+            context.fillStyle = "red";
+            context.fillRect(x, y, -8, 40);
+
+            context.fillStyle = "orange";
+            context.fillRect(x, y + 60, -80, 40);
+
+            context.fillStyle = "yellow";
+            context.fillRect(x, y + 120, -8, 40);
+
+            context.fillStyle = "green";
+            context.fillRect(x, y + 180, -8, 40);
+
+            context.fillStyle = "blue";
+            context.fillRect(x, y + 240, -8, 40);
+
+            context.fillStyle = "indigo";
+            context.fillRect(x, y + 300, -8, 40);
+            ////////////////loop / array
+
+        }
+
+        animate();
+
+
+
+
+
+        /////////////////////
+
+    </script>
+
+
+
+    <hr>
+
+
+    <style>
+        .data_chart {
+            border: 1px #333 solid;
+            width: 100%;
+            background: #fff;
+        }
+
+    </style>
+
+    <script type="text/javascript">
+        /* graphing data might look something like this... 
+                                                                                                                                                                                                  ,10,-10,20,-11,5,-20,11,-3]
+                                                                                                                                                                                                  };
+                                                                                                                                                                                                  */
+
+        /* in this example we'll generate our test data 
+           randomly by calling generateTestData() which 
+           will return a random length array containing 
+           random values between |y| and -|y|
+        */
+
+        function generateTestData() {
+            // generate random graphing data for our test
+            var x = Math.floor((Math.random() * 50) + 10);
+            var data = [];
+            for (var i = 0; i < x; i++) {
+                data[i] = {};
+                data[i].date = i;
+                var tmp = Math.floor((Math.random() * 20) + 1) - 10;
+                data[i].plot = (tmp > 30) ? 30 : tmp; /* aiming for somewhere between -y and y */
+            }
+            return data;
+        }
+
+        function clearCanvas(context, canvas) {
+            context.clearRect(0, 0, canvas.width, canvas.height);
+            var w = canvas.width;
+            canvas.width = 1;
+            canvas.width = w;
+        }
+
+        function plotGraph(args) {
+            var chartEl = args['chartEl'];
+            var data = args['data'];
+
+            var canvas = document.getElementById(chartEl);
+            var context = canvas.getContext('2d');
+            if (canvas && canvas.getContext) {
+
+                var x = 10; /* start inside the grid so we can show the line endings */
+                y = (canvas.height / 2);
+                clearCanvas(context, canvas);
+                context.beginPath();
+                context.moveTo(x, y);
+
+                var l = data.length;
+                if (!l) return; /* nothing to plot */
+                var xx = (canvas.width - x * 2) / l; /* scale horizontal plot based on the length of the data */
+                /* note: canvas.width-x*2 places the end of the line the same distance from the right 
+                    hand-limit as the starting point of x...so we can see the line cap. */
+
+                var str = '';
+                for (var i = 0; i < l; i++) {
+                    var yy = data[i].plot;
+                    x += xx;
+                    y += yy;
+                    context.lineTo(x, y);
+
+                    /* collect the data so we can show the user what we're plotting */
+                    str += '' + (i > 0 ? ',' : '') + data[i].plot
+                }
+
+                /* pick a random color and line width for the graph plotter */
+                var colrs = ['#ff0000', '#00ff00', '#0000ff', 'rgb(50,50,50)', 'rgb(200,200,200)', 'purple', 'orange', 'black'];
+                var colr = colrs[Math.floor(Math.random() * colrs.length)];
+                var w = Math.floor(Math.random() * 10) + 1;
+
+                /* show the user which color and line width were picked */
+                document.getElementById('lineColor').innerHTML = 'Color: ' + colr;
+                document.getElementById('lineWidth').innerHTML = 'Width: ' + w;
+                document.getElementById('lineData').innerHTML = 'Data:&nbsp;[' + str + ']';
+
+                context.lineCap = 'round';
+                context.lineWidth = w;
+                context.strokeStyle = colr;
+                context.stroke();
+
+            } else {
+                /* unsupported browser */
+                alert("Couldn't get a reference to the HTML 5 canvas. Your browser doesn't appear to support this page.");
+            }
+        };
+
+    </script>
+</body>
+
+</html>
